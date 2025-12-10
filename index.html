@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<link rel="stylesheet" href="css/style_Structure.css" />
+<link rel="stylesheet" href="css/style_Text.css" />
+<link rel="stylesheet" href="css/style_Modal.css" />
+<script src="js/event_Intro.js" defer></script>
+<script src="js/event_Modal.js" defer></script>
+<script src="js/event_CircularScroll.js" defer></script>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sio2nhyo</title>
+</head>
+
+<body>
+    <div class="intro_layer">
+        <img src="img/bgimg.jpg" class="intro_img" alt="intro">
+
+        <div class="intro_text">Click for SiO2nHYO</div>
+    </div>
+
+    <!-- 웹사이트 도움말 modal -->
+    <div class="scrim">
+        <div class="modal_body">
+            <button class="btn_close_modal">
+            </button>
+            <img src="img/tooltip.jpg" width="1200px" height="auto">
+        </div>
+    </div>
+    <!-- GNB -->
+    <div class="GNB">
+        <div class="logo">SiO2nHYO</div>
+        <button class="btn_open_modal">H0W t0 V1eW</button>
+    </div>
+    <div class="scrollarea">
+        <!-- 프로젝트 menu -->
+        <div class="circle">
+            <div class="container_00" data-img="img/project0.jpg" data-title="한효주" data-header="DCD / 22" data-intro="email | sio2nhyo@gmail.com
+                contact | @h_hyo_o0" data-backimg="img/project0_back.jpg">
+                <div class="wrap_00">
+                    <div class="title_00">
+                        about
+                    </div>
+                    <div class="num_00">
+                        00
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="container_01" data-img="img/project0.jpg" data-title="한효주" data-header="DCD / 22" data-intro="email | sio2nhyo@gmail.com
+                            contact | @h_hyo_o0" data-backimg="img/project0_back.jpg">
+                <div class="wrap_01">
+                    <div class="title_01">
+                        hobby
+                    </div>
+                    <div class="num_01">
+                        01
+                    </div>
+                </div>
+            </div>
+            <div class="container_02" data-img="img/project0.jpg" data-title="한효주" data-header="DCD / 22" data-intro="email | sio2nhyo@gmail.com
+                            contact | @h_hyo_o0" data-backimg="img/project0_back.jpg">
+                <div class="wrap_02">
+                    <div class="title_02">
+                        likes
+                    </div>
+                    <div class="num_02">
+                        01
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="container_03" data-img="img/project1.jpg" data-title="@tion" data-header="졸업프로젝트 / 2025"
+                data-intro="발표의 두려움을 자신감으로,
+                AI 발표 준비 서비스" data-backimg="img/back1.jpg">
+                <div class="wrap_03">
+                    <div class="title_03">
+                        UIUX
+                    </div>
+                    <div class="num_03">
+                        01
+                    </div>
+                </div>
+            </div>
+            <div class="container_04" data-img="img/project2.jpg" data-title="봉투백서" data-header="36th AT SOPT / 2025"
+                data-intro="검색은 그만!
+                나만의 경조사비 가이드" data-backimg="img/back2.jpg">
+                <div class="wrap_04">
+                    <div class="title_04">
+                        UIUX
+                    </div>
+                    <div class="num_04">
+                        02
+                    </div>
+                </div>
+            </div>
+            <div class="container_03" data-img="img/project3.jpg" data-title="AI Tutor"
+                data-header="Side Project / 2024" data-intro="AI Tutor와 함께 학생들의 복습을
+                간편하게 지원해보세요!" data-backimg="img/back3.jpg">
+
+                <div class="wrap_05">
+                    <div class="title_05">
+                        UIUX
+                    </div>
+                    <div class="num_05">
+                        03
+                    </div>
+                </div>
+            </div>
+            <div class="container_04" data-img="img/project4.jpg" data-title="WishWesee" data-header="3rd Depth / 2024"
+                data-intro="초대를 더 특별하게! 디지털 초대장" data-backimg="img/back4.jpg">
+
+                <div class="wrap_06">
+                    <div class="title_06">
+                        UIUX
+                    </div>
+                    <div class="num_06">
+                        04
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 프로젝트 image -->
+        <div class="wrap_img">
+            <img id="img_prev" class="subimg_prev" src="">
+
+            <div class="main_card_perspective">
+                <div class="main_card">
+                    <div class="face front">
+                        <img id="img_main" class="mainimg" src="">
+                    </div>
+
+                    <div class="face back">
+                        <img class="backimg" src="">
+                    </div>
+                </div>
+            </div>
+            <img id="img_next" class="subimg_next" src="">
+        </div>
+
+        <!-- 프로젝트에 대한 짧은 description -->
+        <div class="details">
+            <div class="name">
+                제목
+            </div>
+            <div class="header">
+                헤더
+            </div>
+            <div class="introduction">
+                설명글
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

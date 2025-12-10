@@ -1,0 +1,309 @@
+body {
+  width: 100%;
+  height: 100vh;
+
+  margin: 0px;
+  overflow: hidden;
+
+  background-color: #ffffff;
+  background: radial-gradient(
+    96.66% 81.92% at 81.92% 100%,
+    #ead467 0%,
+    #9aabe3 100%
+  );
+}
+
+/* 인트로 */
+.intro_layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 12;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 1s ease-in-out, visibility 1s;
+}
+.intro_layer.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro_text {
+  position: absolute;
+  bottom: 50px;
+  color: #ffffff;
+  font-size: 20px;
+  opacity: 0.8;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.intro_layer.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* GNB */
+.GNB {
+  width: 100%;
+  height: auto;
+  z-index: 6;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  padding: 20px 40px;
+  backdrop-filter: blur(8px);
+}
+
+/* 스크롤 영역 */
+.scrollarea {
+  width: 100%;
+  height: 90vh;
+
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+
+/* 원형배치 */
+.circle {
+  width: 30%;
+  position: relative;
+  left: 50px;
+}
+
+/* 원 내부 메뉴 */
+[class^="wrap"] {
+  display: flex;
+}
+
+[class^="container"] {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform-origin: -400px 50%;
+
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), color 1s,
+    opacity 0.2s;
+}
+
+[class^="container"].active::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+
+[class^="title"] {
+  margin-right: 12px;
+}
+
+/* 메뉴 해당 이미지 */
+.wrap_img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  height: 540px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap_img img {
+  position: absolute;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px #ffffff75;
+  transition: all 0.5s ease-out;
+}
+
+.mainimg {
+  z-index: 4;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: brightness(1);
+}
+
+.subimg_prev {
+  z-index: 2;
+  opacity: 0.4;
+  transform: scale(0.8) translateY(-400px);
+  filter: brightness(0.5);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.subimg_next {
+  z-index: 2;
+  opacity: 0.4;
+  transform: scale(0.8) translateY(400px);
+  filter: brightness(0.5);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 설명 텍스트 */
+.details {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 240px;
+
+  border-left: 2px solid #ead467;
+  padding-left: 24px;
+}
+
+.name,
+.header,
+.introduction {
+  margin-bottom: 12px;
+}
+
+/* 카드 디자인 */
+.main_card_perspective {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 720px;
+  height: 540px;
+
+  z-index: 10;
+  perspective: 1000px;
+}
+
+.main_card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #ffffff75;
+}
+
+.face.front {
+  background-color: #000;
+}
+
+.mainimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.face.back {
+  background-color: #333;
+  transform: rotateY(180deg);
+
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.backimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 카드 회전 */
+@keyframes rotateCard {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.main_card_perspective:hover .main_card {
+  transform: rotateY(180deg);
+}
+
+/* 사진 이동 */
+.subimg_prev,
+.subimg_next,
+.main_card_perspective {
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.wrap_img.move-up .subimg_prev {
+  transform: translateY(-800px) scale(0.6);
+  opacity: 0;
+}
+.wrap_img.move-up .main_card_perspective {
+  transform: translate(-50%, -400px) scale(0.8) !important;
+  opacity: 0.4;
+  z-index: 5;
+}
+.wrap_img.move-up .subimg_next {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  z-index: 10;
+  filter: brightness(1);
+}
+
+.wrap_img.move-down .subimg_prev {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  z-index: 10;
+  filter: brightness(1);
+}
+.wrap_img.move-down .main_card_perspective {
+  transform: translate(-50%, 400px) scale(0.8) !important;
+  opacity: 0.4;
+  z-index: 5;
+}
+.wrap_img.move-down .subimg_next {
+  transform: translateY(800px) scale(0.6);
+  opacity: 0;
+}
